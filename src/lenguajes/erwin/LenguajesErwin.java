@@ -7,7 +7,7 @@ package lenguajes.erwin;
 
 /**
  *
- * @author T-107
+ * @author Azael Fann Heian
  */
 public class LenguajesErwin {
 

@@ -20,6 +20,7 @@ public class LenguajesErwin {
         System.out.println("Mi primer programa de lenguajes");
         
         System.out.println("This is Sparta");
+        System.out.println("hoy veremos constructores");
     }
     
 }

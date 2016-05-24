@@ -11,4 +11,7 @@ package constructores;
  */
 public class ProbarConstructores {
     
+    public static void main(String[] args) {
+        
+    } 
 }

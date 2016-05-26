@@ -15,5 +15,7 @@ public class ProbarConstructores {
         
         Animal obj1 = new Animal();
         System.out.println("El nombre del animal es: "+obj1.nombre);
+        System.out.println("La especie del animal es: "+obj1.especie);
+        System.out.println("El animal es carnivoro? "+obj1.carnivoro);
     } 
 }

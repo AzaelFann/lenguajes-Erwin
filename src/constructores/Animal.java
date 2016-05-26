@@ -25,6 +25,11 @@ public class Animal {
         especie = valor1;
         nombre=valor2;
     }
+     public Animal(String valor1, String valor2, boolean si){
+         nombre=valor1;
+         especie = valor2;
+         carnivoro = si;
+    }
     public Animal(){
         nombre = "Dragon";
     }

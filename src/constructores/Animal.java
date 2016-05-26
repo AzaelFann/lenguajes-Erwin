@@ -28,14 +28,14 @@ public class Animal {
      public Animal(String valor1, String valor2, boolean si){
          nombre=valor1;
          especie = valor2;
-         carnivoro = si;
+         carnivoro = true;
     }     
      public Animal(String valor1, boolean no){   
         especie=valor1;
-        carnivoro=no;
+        carnivoro=false;
     }
      public Animal(boolean si, String valor1){
-         carnivoro=si;
+         carnivoro=true;
          especie=valor1;
      }
      public Animal(){

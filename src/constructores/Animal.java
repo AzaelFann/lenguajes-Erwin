@@ -15,30 +15,23 @@ public class Animal {
     String nombre;
     String especie;
     boolean carnivoro;
+
+    public Animal(String nombre, String especie, boolean carnivoro) {
+        this.nombre = nombre;
+        this.especie = especie;
+        this.carnivoro = carnivoro;
+    }
+
+    public Animal(String nombre, String especie) {
+        this.nombre = nombre;
+        this.especie = especie;
+    }
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Animal() {
+    }
     
-    // hacer tres constructores mas
-    
-    public Animal(String valor){
-        nombre=valor;
-    }
-     public Animal(String valor1, String valor2){
-        especie = valor1;
-        nombre=valor2;
-    }
-     public Animal(String valor1, String valor2, boolean si){
-         nombre=valor1;
-         especie = valor2;
-         carnivoro = true;
-    }     
-     public Animal(String valor1, boolean no){   
-        especie=valor1;
-        carnivoro=false;
-    }
-     public Animal(boolean si, String valor1){
-         carnivoro=true;
-         especie=valor1;
-     }
-     public Animal(){
-        nombre = "Dragon";
-    }
 }

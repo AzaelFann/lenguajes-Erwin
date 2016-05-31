@@ -1,7 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+clases se dividen en 3 grandes gruos
+****Entidad
+-son el reflejo de una tabla
+-no tienen logica transaccional
+-el encapsulamiento solo se aplica a esta
+****Logicas
+-solo contienen logica transaccional
+ entre una o mas entidades
+****Aplicacion(una por proyecto)
+-se invocan y crean entidades y se manipulan
+ por medio de metodos
+-NO TIENEN LOGICA DE NINGUN TIPO
  */
 package metodo;
 

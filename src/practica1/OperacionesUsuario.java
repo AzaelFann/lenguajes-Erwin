@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package metodo;
+package practica1;
 
 /**
  *
  * @author Azael Fann Heian
  */
 public class OperacionesUsuario {
-    
-    public String calcularEdadEnDias(Usuarios u){
-        int edadDias = u.getEdad()*365;
-        return "" + edadDias;
+     public String calcularIMC(Usuario u){
+        double imc = u.getPeso()*(u.getAltura()*u.getAltura());
+        return "" + imc;
     }
-    
-   
-    
 }

@@ -15,12 +15,13 @@ public class ProbarUsuario {
         (get) accesorio
        por cada atributo debe haber un metodo mutador y una accesorio
         */
-        Usuarios u1 = new Usuarios();
+       /* Usuarios u1 = new Usuarios();
         u1.setEdad(20);
        
         //creamos un objeto de la clase logica
         OperacionesUsuario o=new OperacionesUsuario();
         
         System.out.println("Tu edad en dias es: "+o.calcularEdadEnDias(u1));
+*/
     }
 }

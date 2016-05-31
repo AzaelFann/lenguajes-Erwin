@@ -16,6 +16,9 @@ package metodo;
 
 public class Usuarios {
    private int edad;
+   
+ 
+  
 
     /**
      * @return the edad
@@ -29,9 +32,9 @@ public class Usuarios {
      */
     public void setEdad(int edad) {
           if(edad<0){
-            edad=0;
-            System.out.println("No debes poner edades menor a cero");
-        }
+                      edad=0;
+                      System.out.println("No debes poner edades menor a cero");
+                    }
         this.edad = edad;
     }
    

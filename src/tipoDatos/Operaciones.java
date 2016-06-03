@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica1;
+package tipoDatos;
 
 /**
  *
  * @author Azael Fann Heian
  */
-public class OperacionesUsuario {
-     public String calcularIMC(Usuario u){
-        int imc = u.getPeso()*(u.getAltura()*u.getAltura());
-        return "" + imc;
-    }
+public class Operaciones {
+    
 }

@@ -111,7 +111,7 @@ public class VentanaIMC extends javax.swing.JFrame {
         u1.setPeso(Integer.parseInt(txtPeso.getText()));
         u1.setAltura(Integer.parseInt(txtAltura.getText()));
         
-        OperacionesUsuario o=new OperacionesUsuario();
+        OperacionesUsuario o = new OperacionesUsuario();
         
         etiqResultado.setText("Tu IMC es:"+o.calcularIMC(u1));
         

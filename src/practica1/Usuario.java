@@ -10,10 +10,10 @@ package practica1;
  * @author Azael Fann Heian
  */
 public class Usuario {
-   private int peso;
-   private int altura;
+   private double peso;
+   private double altura;
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
@@ -21,7 +21,7 @@ public class Usuario {
         this.peso = peso;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 

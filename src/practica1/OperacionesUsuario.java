@@ -11,7 +11,7 @@ package practica1;
  */
 public class OperacionesUsuario {
      public String calcularIMC(Usuario u){
-        int imc = u.getPeso()*(u.getAltura()*u.getAltura());
+        double imc = u.getPeso()*(u.getAltura()*u.getAltura());
         return "" + imc;
     }
 }

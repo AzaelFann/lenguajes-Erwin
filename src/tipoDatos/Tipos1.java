@@ -13,6 +13,6 @@ public class Tipos1 {
     public static void main(String[] args) {
         //declaramos un byte
       Operaciones o=new Operaciones();
-        System.out.println(o.suma((float)4.0,5.0f));
+      //  System.out.println(o.suma((float)4.0,5.0f));
     }
 }

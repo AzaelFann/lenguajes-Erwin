@@ -43,7 +43,7 @@ public class SegundaExcepcion {
             
             int x=2;
             int y=0;
-            //int div= x/y;
+            //int div= x;/y
             
             FileInputStream fis = new FileInputStream(f);
             int ch = 0;

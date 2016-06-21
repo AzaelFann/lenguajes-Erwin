@@ -29,7 +29,8 @@ public class PersistenciaUsuario {
     public void guardar(Usuario u) throws Exception {
         
         //paso 1 generar el archivo a guardar
-      File f = new File("archer.emiya");
+      File f = new File("azael.fann");
+      if(f.exists()) usuarios = buscarTodos();
         //indicar que se va a guardar
       FileOutputStream fos = new FileOutputStream(f);
         //generar el objeto que nos va ayudar a guardar el arraylist de usuarios
@@ -41,8 +42,14 @@ public class PersistenciaUsuario {
        
     }
     
+    //empieza el metodo de leer a los usuarios guardados
     
-    
-    
+    public ArrayList<Usuario> buscarTodos() throws Exception{
+        File f = new File ("azael.fann");
+        FileInputStream fis = new FileInputStream(f);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        usuarios = (ArrayList<Usuario>)ois.readObject();
+        return usuarios;
+    }
     
 }

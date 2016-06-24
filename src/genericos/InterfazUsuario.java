@@ -5,6 +5,7 @@
  */
 package genericos;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -42,6 +43,9 @@ public class InterfazUsuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        btnBuscarTodos = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbTablaUsuarios = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,20 +118,62 @@ public class InterfazUsuario extends javax.swing.JFrame {
                     .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addComponent(btnGuardar)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Guardar Usuarios", jPanel1);
+
+        btnBuscarTodos.setText("Buscar a todos los usuarios");
+        btnBuscarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarTodosActionPerformed(evt);
+            }
+        });
+
+        tbTablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Edad", "E-mail"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tbTablaUsuarios);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 574, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(btnBuscarTodos))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btnBuscarTodos)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Buscar Usuarios", jPanel2);
@@ -144,7 +190,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(104, 104, 104)
                         .addComponent(jLabel1)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,6 +219,29 @@ public class InterfazUsuario extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(this, ex.getMessage());
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnBuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarTodosActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            //generamos un objeto de la clase persistencia usuario
+            PersistenciaUsuario p = new PersistenciaUsuario();
+            ArrayList<Usuario> usuarios = p.buscarTodos();
+            int tama = usuarios.size();
+            //JOptionPane.showConfirmDialog(this, "Usuarios encontrados: "+tama);
+            int fila = 0;
+            for(Usuario u: usuarios){
+                tbTablaUsuarios.setValueAt(u.getNombre(), fila, 0);
+                tbTablaUsuarios.setValueAt(u.getEdad(), fila, 1);
+                tbTablaUsuarios.setValueAt(u.getEmail(), fila, 2);
+                 	//rapidclimate@gmail.com
+                fila++;
+            }
+                    
+        } catch (Exception ex) {
+            JOptionPane.showConfirmDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_btnBuscarTodosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +279,7 @@ public class InterfazUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarTodos;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -217,7 +287,9 @@ public class InterfazUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable tbTablaUsuarios;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtMail;
     private javax.swing.JTextField txtNombre;

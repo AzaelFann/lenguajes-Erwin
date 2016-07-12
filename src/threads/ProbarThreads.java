@@ -5,13 +5,12 @@
  */
 package threads;
 
-import java.io.Serializable;
 
 /**
- *
+ *clase internas anonimas
  * @author Azael Fann Heian
  */
-public class ProbarThreads implements Runnable, Serializable{
+public class ProbarThreads implements Runnable{
     public static void main(String[] args) {
         //creamos el thread
         PrimerThread t1 = new PrimerThread();
